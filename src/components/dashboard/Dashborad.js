@@ -6,9 +6,7 @@ import ProjectList from "../projects/ProjectList";
 
 class Dashborad extends Component {
   render() {
-    console.log(this.props.project);
     const { projects } = this.props;
-
     return (
       <div className="dashborad container">
         <div className="row">

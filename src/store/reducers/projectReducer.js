@@ -1,3 +1,8 @@
+import {
+  CREATE_PROJECT_REQUEST,
+  CREATE_PROJECT_FAILURE
+} from "../constants/projects";
+
 const initState = {
   projects: [
     { id: 1, title: "Project 1", content: "Project 1 content" },
@@ -8,7 +13,19 @@ const initState = {
 };
 
 const projectReducer = (state = initState, action) => {
-  return state;
+
+  switch (action.type) {
+    case CREATE_PROJECT_REQUEST:
+      console.log(action.payload);
+      return state;
+
+    case CREATE_PROJECT_FAILURE:
+      console.log(action.payload);
+      return state;
+
+    default:
+      return state;
+  }
 };
 
 export default projectReducer;

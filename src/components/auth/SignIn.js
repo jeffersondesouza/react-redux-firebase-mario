@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 
-export class SignUp extends Component {
+export class SignIn extends Component {
   state = {
     email: "",
-    password: "",
-    firstname: "",
-    lastname: ""
+    password: ""
   };
 
   handleChange = e => {
@@ -17,13 +15,14 @@ export class SignUp extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
+    
   };
 
   render() {
     return (
       <div className="container white">
         <header>
-          <h5 className="grey-text text-darken-3">Sign Up</h5>
+          <h5 className="grey-text text-darken-3">Sign In</h5>
         </header>
         <form onSubmit={this.handleSubmit} className="white">
           <div className="input-field">
@@ -47,28 +46,8 @@ export class SignUp extends Component {
           </div>
 
           <div className="input-field">
-            <label htmlFor="firstname">First name</label>
-            <input
-              type="text"
-              id="firstname"
-              name="firstname"
-              onChange={this.handleChange}
-            />
-          </div>
-
-          <div className="input-field">
-            <label htmlFor="lastname">Last name</label>
-            <input
-              type="text"
-              id="lastname"
-              name="lastname"
-              onChange={this.handleChange}
-            />
-          </div>
-
-          <div className="input-field">
             <button type="submit" className="btn pink lighten-1 z-depth-0">
-              Sign Up
+              Login
             </button>
           </div>
         </form>
@@ -77,4 +56,4 @@ export class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default SignIn;

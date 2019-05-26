@@ -1,14 +1,14 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import "./App.css";
+import NavBar from "./components/layout/NavBar";
 
 function App() {
   return (
-    <div>
-      <div>Marios</div>
-      <div>
-        <button className="btn">Cluck</button>
-      </div>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+    </BrowserRouter>
   );
 }
 

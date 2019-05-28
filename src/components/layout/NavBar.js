@@ -9,7 +9,6 @@ import SingOutLinks from "./SingOutLinks";
 
 const NavBar = props => {
   const { auth } = props;
-  console.log("auth:", auth.uid);
 
   return (
     <nav className="nav-wrapper grey darken-3">
@@ -28,6 +27,7 @@ const NavBar = props => {
 };
 
 const mapStateToPros = state => {
+  console.log('state:', state)
   return {
     auth: state.firebase.auth
   };

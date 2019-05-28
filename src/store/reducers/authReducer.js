@@ -4,7 +4,10 @@ import {
   SIGN_IN_FAILURE,
   SIGN_OUT_REQUEST,
   SIGN_OUT_SUCCESS,
-  SIGN_OUT_FAILURE
+  SIGN_OUT_FAILURE,
+  SIGN_UP_REQUEST,
+  SIGN_UP_SUCCESS,
+  SIGN_UP_FAILURE
 } from "../constants/auth";
 
 const initState = {
@@ -47,6 +50,22 @@ const authReducer = (state = initState, action) => {
         ...state,
         isSigningOut: false,
         error: action.error
+      };
+
+    case SIGN_UP_REQUEST:
+      return {
+        ...state,
+        isSigningUp: true
+      };
+    case SIGN_UP_SUCCESS:
+      return {
+        ...state,
+        isSigningUp: false
+      };
+    case SIGN_UP_FAILURE:
+      return {
+        ...state,
+        isSigningUp: true
       };
 
     default:

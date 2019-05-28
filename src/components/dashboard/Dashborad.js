@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { compose } from "redux";
 import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
 
 import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
@@ -22,6 +24,16 @@ class Dashborad extends Component {
   }
 }
 
-const mapStateToProps = state => ({ projects: state.project.projects });
+const mapStateToProps = state => {
 
-export default connect(mapStateToProps)(Dashborad);
+  return { projects: state.firestore.ordered.projects || [] };
+};
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    {
+      collection: "projects"
+    }
+  ])
+)(Dashborad);

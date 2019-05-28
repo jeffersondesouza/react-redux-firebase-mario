@@ -1,5 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+
 import SingInLinks from "./SingInLinks";
 import SingOutLinks from "./SingOutLinks";
 
@@ -15,4 +17,8 @@ const NavBar = () => (
   </nav>
 );
 
-export default NavBar;
+const mapStateToPros = state => {
+  console.log('state:', state)
+  return {};
+};
+export default connect(mapStateToPros)(NavBar);

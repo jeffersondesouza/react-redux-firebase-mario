@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const SingInLinks = () => (
+const SingInLinks = ({ onSignOut }) => (
   <ul className="right">
     <li>
       <NavLink to="/create" activeClassName="grey darken-4">
@@ -9,15 +9,10 @@ const SingInLinks = () => (
       </NavLink>
     </li>
     <li>
-      <NavLink to="/">
-        Log Out
-      </NavLink>
+      <NavLink to="/" onClick={onSignOut}>Log Out</NavLink>
     </li>
     <li>
-      <NavLink
-        to="/"
-        className="btn btn-floating pink lighten-1"
-      >
+      <NavLink to="/" className="btn btn-floating pink lighten-1">
         NN
       </NavLink>
     </li>

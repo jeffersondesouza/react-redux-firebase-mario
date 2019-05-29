@@ -31,13 +31,18 @@ const store = createStore(
   )
 );
 
-store.firebaseAuthIsReady.then(() => {
+console.log("store:", store.getState());
+
+store.firebaseAuthIsReady.then(r => {
+  console.log("firebaseAuthIsReady:", r);
+
   ReactDOM.render(
     <Provider store={store}>
       <App />
     </Provider>,
     document.getElementById("root")
   );
+  console.log("qqw");
 
   serviceWorker.unregister();
 });
